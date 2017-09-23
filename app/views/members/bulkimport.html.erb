@@ -1,0 +1,6 @@
+<h1>Bulk Import Members</h1>
+
+<%= form_tag(bulkimport_member_path) do %>
+	<div><%= text_area_tag :bulkimportdata, nil, rows:10, cols: 50%></div>
+	<div><%= submit_tag 'Save' %></div>
+<% end  %>

@@ -67,8 +67,7 @@ class MembersController < ApplicationController
 			csv_data = params[:bulkimportdata]	
 			CSV.parse(csv_data, :headers => true) do |row|
 				begin
-					puts row.to_hash
-					# Member.create!(row.to_hash)
+					Member.create!(row.to_hash)
 				rescue
 				end
 			end

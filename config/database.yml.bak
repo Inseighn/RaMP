@@ -1,10 +1,9 @@
 # Fill in development DB Information
 development:
   adapter: postgresql
-  host: 10.0.0.42
-  database: ramp_dev 
-  username: aaron
-  password: ar54ar93
+  host:
+  database:
+  username:
 
 # Fill in production DB Information
 #

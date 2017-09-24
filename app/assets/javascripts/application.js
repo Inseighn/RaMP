@@ -17,9 +17,10 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
-
-if ($('#appNotify').length > 0) {
-	setTimeout(function() {
-		$('#appNotify').remove();
-	}, 1000);
-}
+$(function() {
+	if ($('#appNotify').length > 0) {
+		setTimeout(function() {
+			$('#appNotify').remove();
+		}, 3000);
+	}
+});

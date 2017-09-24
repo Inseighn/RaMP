@@ -14,5 +14,12 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery3
+//= require jquery_ujs
 //= require popper
 //= require bootstrap
+
+if ($('#appNotify').length > 0) {
+	setTimeout(function() {
+		$('#appNotify').remove();
+	}, 1000);
+}

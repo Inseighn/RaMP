@@ -70,8 +70,19 @@ class MembersController < ApplicationController
 					Member.create!(row.to_hash)
 				rescue
 				end
+			@app_notify = 'BulkImport successful!'
 			end
 		end		
+	end
+	
+	def deleteall
+		Member.all.each do |m|
+			m.destroy
+		end
+		@app_notify = 'All members destroyed.'
+		respond_to do |format|
+			format.html { redirect_to members_url, notice: 'All members have been wiped' } 
+		end
 	end
 	
 

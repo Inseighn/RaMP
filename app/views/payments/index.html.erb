@@ -1,0 +1,17 @@
+<h1>Payments</h1>
+<%= form_for @payment, url: {action: 'create'} do |form| %> 
+	<div class="form-group">
+			<%= form.label :semester_id %>
+			<%= form.collection_select :semester_id, Semester.all.reverse, :id, :name, {}, {:class => "form-control"} %>
+	</div>
+	<div class="form-group">
+		<%= form.label :member_id %>
+		<%= form.text_field :member_id,  :class => "form-control"   %>
+	</div>
+	<div class="form-group">
+			<%= form.label :notes %>
+			<%= form.text_area :notes, :class => "form-control" %>
+	</div>
+	<%= form.submit 'Save Payment', :class => "btn btn-primary" %>
+<% end %>
+

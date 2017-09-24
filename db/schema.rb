@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924160042) do
+ActiveRecord::Schema.define(version: 20170924160528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20170924160042) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "semester_id"
+    t.string "notes"
+    t.date "payment_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id", "semester_id"], name: "index_payments_on_member_id_and_semester_id", unique: true
+  end
+
   create_table "semesters", force: :cascade do |t|
     t.date "start"
     t.date "end"
@@ -40,4 +50,6 @@ ActiveRecord::Schema.define(version: 20170924160042) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "payments", "members"
+  add_foreign_key "payments", "semesters"
 end

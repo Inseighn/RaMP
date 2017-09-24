@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member_id: 1
+  semester_id: 1
+  notes: MyString
+  payment_date: 2017-09-24
+
+two:
+  member_id: 1
+  semester_id: 1
+  notes: MyString
+  payment_date: 2017-09-24
